@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="ipad10_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,126 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Teleprompter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jpS-JX-uLK">
+                                <rect key="frame" x="0.0" y="1062" width="834" height="50"/>
+                                <items>
+                                    <navigationItem id="ASE-Ih-8f4">
+                                        <leftBarButtonItems>
+                                            <barButtonItem systemItem="play" id="OKQ-r3-bcb">
+                                                <connections>
+                                                    <action selector="playButton:" destination="BYZ-38-t0r" id="noH-Sh-JeJ"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="pause" id="cJO-Uk-sXn">
+                                                <connections>
+                                                    <action selector="pauseButton:" destination="BYZ-38-t0r" id="5d2-lr-930"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="stop" id="OWo-oT-WOg">
+                                                <connections>
+                                                    <action selector="resetButton:" destination="BYZ-38-t0r" id="1tU-EF-Ut2"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </leftBarButtonItems>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Wk9-T6-fmq">
+                                            <connections>
+                                                <action selector="flipButton:" destination="BYZ-38-t0r" id="MEa-fw-ZR4"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mi6-A9-tgQ">
+                                <rect key="frame" x="68" y="20" width="698" height="1042"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rHj-OG-B5n">
+                                <rect key="frame" x="60" y="20" width="8" height="1042"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="8" id="Jxf-Y8-Vsc"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="2o5-nW-0oW" appends="YES" id="TIz-F0-kOC"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9VY-m7-Q1e">
+                                <rect key="frame" x="766" y="20" width="8" height="1042"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="8" id="MD2-8O-u8d"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="dKy-xT-xDh" appends="YES" id="te8-zI-eIY"/>
+                                </connections>
+                            </view>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LL0-I6-pfj">
+                                <rect key="frame" x="0.0" y="20" width="834" height="458"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VfQ-gf-kBN">
+                                <rect key="frame" x="0.0" y="600" width="834" height="462"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LL0-I6-pfj" firstAttribute="trailing" secondItem="jpS-JX-uLK" secondAttribute="trailing" id="3g9-cc-HaY"/>
+                            <constraint firstAttribute="trailing" secondItem="jpS-JX-uLK" secondAttribute="trailing" id="4DZ-Dm-Fyn"/>
+                            <constraint firstItem="Mi6-A9-tgQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="I21-N6-HIa"/>
+                            <constraint firstItem="LL0-I6-pfj" firstAttribute="leading" secondItem="VfQ-gf-kBN" secondAttribute="leading" id="J7e-WR-6Vz"/>
+                            <constraint firstItem="LL0-I6-pfj" firstAttribute="trailing" secondItem="VfQ-gf-kBN" secondAttribute="trailing" id="JZ7-PS-JEG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9VY-m7-Q1e" secondAttribute="trailing" constant="60" id="Ljf-jY-5eh"/>
+                            <constraint firstAttribute="bottom" secondItem="LL0-I6-pfj" secondAttribute="bottom" constant="634" id="QFe-Ws-UUN"/>
+                            <constraint firstItem="9VY-m7-Q1e" firstAttribute="top" secondItem="rHj-OG-B5n" secondAttribute="top" id="QLN-gw-KMP"/>
+                            <constraint firstItem="rHj-OG-B5n" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="SMi-xe-iHf"/>
+                            <constraint firstItem="9VY-m7-Q1e" firstAttribute="leading" secondItem="Mi6-A9-tgQ" secondAttribute="trailing" id="UGr-PA-5VU"/>
+                            <constraint firstItem="jpS-JX-uLK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WGL-l7-1j1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Mi6-A9-tgQ" secondAttribute="trailing" constant="68" id="Ys4-Df-Mtr"/>
+                            <constraint firstItem="VfQ-gf-kBN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="600" id="Ywu-V4-Uup"/>
+                            <constraint firstItem="LL0-I6-pfj" firstAttribute="top" secondItem="9VY-m7-Q1e" secondAttribute="top" id="eYz-gI-83B"/>
+                            <constraint firstItem="jpS-JX-uLK" firstAttribute="top" secondItem="Mi6-A9-tgQ" secondAttribute="bottom" id="fqY-3S-LGP"/>
+                            <constraint firstItem="LL0-I6-pfj" firstAttribute="leading" secondItem="jpS-JX-uLK" secondAttribute="leading" id="fzM-cv-hcq"/>
+                            <constraint firstItem="9VY-m7-Q1e" firstAttribute="bottom" secondItem="jpS-JX-uLK" secondAttribute="top" id="gNr-Qj-KdV"/>
+                            <constraint firstItem="jpS-JX-uLK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="sHL-AN-Az0"/>
+                            <constraint firstItem="9VY-m7-Q1e" firstAttribute="bottom" secondItem="rHj-OG-B5n" secondAttribute="bottom" id="tsn-JG-cuA"/>
+                            <constraint firstItem="Mi6-A9-tgQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68" id="ufD-0l-945"/>
+                            <constraint firstItem="9VY-m7-Q1e" firstAttribute="top" secondItem="Mi6-A9-tgQ" secondAttribute="top" id="vtN-1N-dlt"/>
+                            <constraint firstItem="VfQ-gf-kBN" firstAttribute="bottom" secondItem="jpS-JX-uLK" secondAttribute="top" id="yeg-4R-EU4"/>
+                            <constraint firstItem="Mi6-A9-tgQ" firstAttribute="leading" secondItem="rHj-OG-B5n" secondAttribute="trailing" id="zjd-WZ-yAH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="leftDragbarLeadingConstraint" destination="ufD-0l-945" id="yeP-8p-Pz1"/>
+                        <outlet property="leftDragbarLeadingConstraint2" destination="SMi-xe-iHf" id="4XP-T6-4xx"/>
+                        <outlet property="rightDragbarLeadingConstraint" destination="Ys4-Df-Mtr" id="4nC-XW-Moy"/>
+                        <outlet property="rightDragbarLeadingConstraint2" destination="Ljf-jY-5eh" id="LyZ-Lz-PM1"/>
+                        <outlet property="textView" destination="Mi6-A9-tgQ" id="ehd-Sm-VPp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="2o5-nW-0oW">
+                    <connections>
+                        <action selector="leftBarDrag:" destination="BYZ-38-t0r" id="74F-kr-iSm"/>
+                    </connections>
+                </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="dKy-xT-xDh">
+                    <connections>
+                        <action selector="rightBarDrag:" destination="BYZ-38-t0r" id="pld-Sj-3Zv"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="135.97122302158274" y="133.27338129496403"/>
         </scene>
     </scenes>
 </document>
